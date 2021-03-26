@@ -1,0 +1,20 @@
+﻿@model TechDemo.Core.Infrastructure.Services.UserVm
+
+    <tr>
+        <td>
+            <img src="~/images/@Model.Photo"
+                 class="rounded-circle"
+                 height="40" width="40"
+                 asp-append-version="true" />
+        </td>
+        <td>@Model.Name</td>
+        <td>@Model.DateOfBirth.ToString("dd-mm-yyyy")</td>
+        <td>@Model.Email</td>
+        <td>@Model.Password</td>
+        <td>
+            <form asp-action="Delete" method="post" asp-route-id="@Model.Id">
+                <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@Model.Id">Редактировать</a>
+                <button class="btn btn-sm btn-danger">Удалить</button>
+            </form>
+        </td>
+    </tr>
